@@ -1,6 +1,10 @@
 # Contribuindo para IonicNews
 
-Abner
+Abner Lima
+Caio Luiz
+Caio Pedro
+Julio Santana
+Miguel Muniz
 
 
 ## Descrição do projeto
