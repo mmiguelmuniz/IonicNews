@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Favoritos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Favoritos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-item *ngFor="let article of favorites">
+        <ion-thumbnail slot="start" *ngIf="article.urlToImage">
+          <img [src]="article.urlToImage" alt="Imagem da notícia" (click)="openArticle(article.url)" />
+        </ion-thumbnail>
+        <ion-label>
+          <h2 (click)="openArticle(article.url)">{{ article.title }}</h2>
+          <p>{{ article.source.name }}</p>
+        </ion-label>
+        <ion-button fill="clear" color="danger" (click)="removeFavorite(article)">
+          <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+</ion-content>
