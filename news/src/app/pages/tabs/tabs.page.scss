@@ -1,1 +1,110 @@
+$primary-blue: #2563eb;  
+$secondary-blue: #3b82f6;
+$light-blue: #dbeafe;      
+$white: #ffffff;
+$gray-background: #f3f4f6;
+$text-gray: #4b5563;      
 
+
+:host {
+  ion-tabs {
+    ion-tab-bar {
+      --background: #{$white};
+      --color: #{$text-gray};
+      --color-selected: #{$primary-blue};
+     
+      box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.05);
+      border-top: 1px solid #{$light-blue};
+      padding: 10px 0;
+    }
+
+
+    ion-tab-button {
+ 
+      transition: all 0.3s ease;
+
+
+      ion-icon {
+        color: #{$text-gray};
+        font-size: 1.4em;
+        transition: color 0.3s ease, transform 0.2s ease;
+      }
+
+
+      ion-label {
+        font-size: 0.8em;
+        font-weight: 500;
+        color: #{$text-gray};
+        transition: color 0.3s ease;
+      }
+
+
+      &.tab-selected {
+        ion-icon {
+          color: #{$primary-blue};
+          transform: scale(1.1);
+        }
+
+
+        ion-label {
+          color: #{$primary-blue};
+          font-weight: 600;
+        }
+      }
+
+
+      &:hover {
+        ion-icon {
+          color: #{$secondary-blue};
+          transform: scale(1.05);
+        }
+
+
+        ion-label {
+          color: #{$secondary-blue};
+        }
+      }
+    }
+
+
+    @keyframes tabEnter {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+
+
+  ion-tab-button {
+    animation: tabEnter 0.5s ease;
+  }
+}
+
+
+@media (max-width: 600px) {
+  ion-tabs {
+    ion-tab-bar {
+      ion-tab-button {
+        ion-icon {
+          font-size: 1.2em;
+        }
+
+
+        ion-label {
+          font-size: 0.7em;
+        }
+      }
+    }
+  }
+}
+}
+
+
+.ion-color-primary {
+--ion-color-base: #{$primary-blue} !important;
+--ion-color-contrast: #{$white} !important;
+}

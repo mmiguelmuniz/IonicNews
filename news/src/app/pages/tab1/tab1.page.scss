@@ -1,0 +1,31 @@
+.news-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
+ 
+  .news-content {
+    --background: #f4f6f9;
+  }
+ 
+  .refresh-spinner {
+    color: var(--ion-color-primary);
+  }
+ 
+  .infinite-scroll-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+ 
+  .no-articles {
+    text-align: center;
+    padding: 20px;
+    color: var(--ion-color-medium);
+  }
+ 
+  ion-card {
+    margin: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }

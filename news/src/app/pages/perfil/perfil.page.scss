@@ -1,0 +1,140 @@
+$primary-blue: #2563eb;    
+$secondary-blue: #3b82f6;  
+$light-blue: #dbeafe;      
+$white: #ffffff;
+$gray-background: #f3f4f6;
+$text-gray: #4b5563;      
+$danger-red: #ef4444;    
+
+
+:host {
+  ion-content {
+    --background: #{$gray-background};
+  }
+
+
+  ion-header {
+    ion-toolbar {
+      --background: #{$primary-blue};
+      --color: #{$white};
+
+
+      ion-title {
+        font-weight: bold;
+        text-align: center;
+        color: #{$white};
+      }
+    }
+  }
+
+
+  ion-list {
+    background-color: transparent;
+    margin-bottom: 20px;
+
+
+    ion-item {
+      --background: #{$white};
+      --border-color: #{$light-blue};
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+
+
+      ion-label {
+        color: #{$primary-blue};
+        font-weight: 600;
+      }
+
+
+      ion-text {
+        color: #{$text-gray};
+      }
+    }
+  }
+  ion-button {
+    --border-radius: 8px;
+    margin: 10px;
+    text-transform: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+
+    &[color="danger"] {
+      --background: #{$danger-red};
+      --background-hover: #{darken($danger-red, 10%)};
+      --color: #{$white};
+    }
+
+
+    &:not([color="danger"]) {
+      --background: #{$primary-blue};
+      --background-hover: #{$secondary-blue};
+      --color: #{$white};
+    }
+
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+  ion-list, ion-button {
+    animation: fadeIn 0.5s ease;
+  }
+
+
+  @media (max-width: 600px) {
+    ion-button {
+        margin: 10px 5%;
+        width: 90%;
+      }
+    }
+  }
+  
+  
+  .profile-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #{$primary-blue};
+    text-align: center;
+    padding: 20px;
+  
+  
+    ion-icon {
+      font-size: 4em;
+      margin-bottom: 20px;
+      color: #{$secondary-blue};
+    }
+  
+  
+    h2 {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  
+  
+    p {
+      color: #{$text-gray};
+    }
+  }
+  
+  

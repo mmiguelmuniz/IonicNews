@@ -1,5 +1,107 @@
+$primary-blue: #2563eb;    
+$secondary-blue: #3b82f6;  
+$light-blue: #dbeafe;      
+$white: #ffffff;
+$gray-background: #f3f4f6;
 
-    ::-webkit-scrollbar, *::-webkit-scrollbar{
-        display: none !important;
-        overflow: hidden;
+
+:host {
+  ion-content {
+    --background: #{$gray-background};
+  }
+
+
+  ion-header {
+    ion-toolbar {
+      --background: #{$primary-blue};
+      --color: #{$white};
+
+
+      ion-title {
+        font-weight: bold;
+        text-align: center;
+        color: #{$white};
+      }
     }
+
+
+    &.header-collapse-condense {
+      ion-toolbar {
+        --background: #{$secondary-blue};
+      }
+    }
+  }
+
+
+
+
+  ion-segment {
+    background-color: #{$white};
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    border-radius: 8px;
+    overflow: hidden;
+
+
+    ion-segment-button {
+      --color: #{$primary-blue};
+      --color-checked: #{$white};
+      --background-checked: #{$primary-blue};
+      --indicator-color: #{$primary-blue};
+     
+      &.segment-button-checked {
+        color: #{$white};
+        background-color: #{$primary-blue};
+      }
+
+
+      &:hover {
+        background-color: #{$light-blue};
+      }
+
+
+      ion-label {
+        text-transform: capitalize;
+        font-weight: 500;
+      }
+    }
+  }
+
+
+  ion-infinite-scroll {
+    background-color: #{$light-blue};
+
+
+    ion-infinite-scroll-content {
+      color: #{$primary-blue};
+
+
+      .infinite-loading-text {
+        color: #{$primary-blue};
+      }
+    }
+  }
+
+
+  @media (max-width: 600px) {
+    ion-segment {
+      ion-segment-button {
+        font-size: 0.8em;
+      }
+    }
+  }
+
+
+
+
+  ion-segment-button {
+    transition: all 0.3s ease;
+  }
+}
+
+
+app-articles {
+  display: block;
+  padding: 0 15px;
+
+}

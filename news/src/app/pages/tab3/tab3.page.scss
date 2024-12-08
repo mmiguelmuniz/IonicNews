@@ -1,0 +1,147 @@
+$primary-blue: #2563eb;    
+$secondary-blue: #3b82f6;  
+$light-blue: #dbeafe;    
+$white: #ffffff;
+$gray-background: #f3f4f6;
+$danger-red: #ef4444;    
+
+
+:host {
+  ion-content {
+    --background: #{$gray-background};
+  }
+
+
+  ion-header {
+    ion-toolbar {
+      --background: #{$primary-blue};
+      --color: #{$white};
+
+
+      ion-title {
+        font-weight: bold;
+        text-align: center;
+        color: #{$white};
+      }
+    }
+
+
+    &.header-collapse-condense {
+      ion-toolbar {
+        --background: #{$secondary-blue};
+      }
+    }
+  }
+  ion-list {
+    background-color: transparent;
+   
+    ion-item {
+      --background: #{$white};
+      --border-color: #{$light-blue};
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+
+
+      &:hover {
+        background-color: #{$light-blue};
+      }
+
+
+      ion-thumbnail {
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+        overflow: hidden;
+        cursor: pointer;
+
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          transition: transform 0.3s ease;
+
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+
+      ion-label {
+        h2 {
+          color: #{$primary-blue};
+          font-weight: 600;
+          margin-bottom: 5px;
+          cursor: pointer;
+          transition: color 0.3s ease;
+
+
+          &:hover {
+            color: #{$secondary-blue};
+        }
+      }
+
+
+      p {
+        color: darken($light-blue, 40%);
+        font-size: 0.8em;
+      }
+    }
+
+
+    ion-button {
+      --color: #{$danger-red};
+      --color-hover: #{darken($danger-red, 10%)};
+     
+      ion-icon {
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+
+.empty-favorites {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #{$primary-blue};
+  text-align: center;
+  padding: 20px;
+
+
+  ion-icon {
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: #{$secondary-blue};
+  }
+
+
+  h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+
+  p {
+    color: darken($light-blue, 40%);
+}
+}
+
+
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+
+ion-item {
+animation: fadeIn 0.5s ease;
+}
+}
